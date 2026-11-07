@@ -129,9 +129,9 @@ form select option{background:#000;color:#FFF8C4}
 .contact{text-align:center}
 .contact .reach{margin-top:1.75rem;font-size:1.2rem;letter-spacing:.06em;line-height:2}
 .contact .reach a{text-decoration:none;border-bottom:1px solid rgba(255,248,196,.35)}
-.socials{display:flex;flex-wrap:wrap;justify-content:center;gap:.8rem;margin-top:2.5rem}
-.socials a{display:grid;place-items:center;width:3.1rem;height:3.1rem;border:1px solid #FFF8C4;border-radius:50%;text-decoration:none;padding:0}
-.socials svg{width:1.4rem;height:1.4rem;fill:none;stroke:#FFF8C4;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.socials{display:flex;flex-wrap:wrap;justify-content:center;gap:.5rem;margin-top:2.5rem}
+.socials a{display:grid;place-items:center;width:2.6rem;height:2.6rem;border:1px solid #FFF8C4;border-radius:50%;text-decoration:none;padding:0}
+.socials svg{width:1.2rem;height:1.2rem;fill:none;stroke:#FFF8C4;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
 .socials svg.solid{fill:#FFF8C4;stroke:none}
 .socials a:hover{background:#FFF8C4}
 .socials a:hover svg{stroke:#000}
@@ -199,6 +199,11 @@ html{scroll-behavior:auto}
 @media (min-width:40rem){ .mosaic{grid-template-columns:1fr 1fr} }
 @media (min-width:64rem){ .mosaic{grid-template-columns:1fr 1fr 1fr} }
 
+[hidden]{display:none !important}
+.tracks .chip.released{color:#E9B93B}
+.video{position:relative;width:100%;aspect-ratio:16/9;background:#33332A}
+.video iframe{position:absolute;left:0;top:0;width:100%;height:100%;border:0}
+
 </style>
 </head>
 <body>
@@ -217,7 +222,7 @@ html{scroll-behavior:auto}
   <a href="bio.html">bio.</a>
   <a href="music.html">music.</a>
   <a href="gallery.html">gallery.</a>
-  <!-- <a href="yard.html">yellw's yard.</a> -->
+  <a href="index.html#watch">watch.</a>
   <a href="booking.html">booking.</a>
   <a href="index.html#contact">contact.</a>
 </nav>
@@ -247,8 +252,9 @@ html{scroll-behavior:auto}
         <a href="mailto:businessforyellw@gmail.com">businessforyellw@gmail.com</a>
       </p>
   <div class="wrap"><nav class="socials" aria-label="Streaming and social links">
-         <a href="https://open.spotify.com/artist/2adBk0BWmpXWRkXiIzpIKn?si=E6_Zypz0RAOvPZCCqwNrdg&utm_source=copy-link" target="_blank" rel="noopener" aria-label="Spotify" title="Spotify"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9.5"/><path d="M6.6 9.3c3.8-1.1 7.9-.8 11 1M7.3 12.7c3-.8 6-.5 8.7.9M8 15.9c2.4-.6 4.7-.4 6.8.7"/></svg><span class="sr">Spotify</span></a>
+        <a href="https://open.spotify.com/artist/2adBk0BWmpXWRkXiIzpIKn" target="_blank" rel="noopener" aria-label="Spotify" title="Spotify"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9.5"/><path d="M6.6 9.3c3.8-1.1 7.9-.8 11 1M7.3 12.7c3-.8 6-.5 8.7.9M8 15.9c2.4-.6 4.7-.4 6.8.7"/></svg><span class="sr">Spotify</span></a>
         <a href="https://music.apple.com/ng/artist/yellw/1486935218" target="_blank" rel="noopener" aria-label="Apple Music" title="Apple Music"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18V6.2l10-2V16"/><circle cx="6.5" cy="18" r="2.5"/><circle cx="16.5" cy="16" r="2.5"/></svg><span class="sr">Apple Music</span></a>
+        <a href="https://www.youtube.com/@yellwrld" target="_blank" rel="noopener" aria-label="YouTube" title="YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="5.5" width="19" height="13" rx="4"/><path d="M10 9.2v5.6l5-2.8z"/></svg><span class="sr">YouTube</span></a>
         <a href="https://www.instagram.com/yellwrld" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r=".6"/></svg><span class="sr">Instagram</span></a>
         <a href="https://x.com/yellwrld" target="_blank" rel="noopener" aria-label="X" title="X"><svg class="solid" viewBox="0 0 24 24" aria-hidden="true"><path d="M18.9 1.15h3.68l-8.04 9.19L24 22.85h-7.41l-5.8-7.58-6.64 7.58H.47l8.6-9.83L0 1.15h7.59l5.24 6.93ZM17.61 20.64h2.04L6.49 3.24H4.3Z"/></svg><span class="sr">X</span></a>
         <a href="https://www.tiktok.com/@yellwrld" target="_blank" rel="noopener" aria-label="TikTok" title="TikTok"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3v11.2a3.8 3.8 0 1 1-3.8-3.8"/><path d="M14 3c.4 2.6 2 4.2 4.6 4.5"/></svg><span class="sr">TikTok</span></a>
@@ -275,7 +281,22 @@ html{scroll-behavior:auto}
   
   var boxes = [].slice.call(document.querySelectorAll('.countdown'));
   function pad(n) { return n < 10 ? '0' + n : '' + n; }
+  
+  function applyReleases() {
+    var now = Date.now();
+    [].slice.call(document.querySelectorAll('[data-release]')).forEach(function (el) {
+      var out = now >= new Date(el.dataset.release).getTime();
+      el.classList.toggle('released', out);
+      [].slice.call(el.querySelectorAll('.pre')).forEach(function (n) { n.hidden = out; });
+      [].slice.call(el.querySelectorAll('.post')).forEach(function (n) { n.hidden = !out; });
+    });
+    var items = [].slice.call(document.querySelectorAll('.run > li[data-release]')), latest = null;
+    items.forEach(function (li) { li.classList.remove('live'); if (li.classList.contains('released')) latest = li; });
+    if (latest) latest.classList.add('live');
+  }
+
   function tick() {
+    applyReleases();
     var now = Date.now();
     boxes.forEach(function (b) {
       var diff = new Date(b.dataset.target).getTime() - now;
@@ -288,7 +309,7 @@ html{scroll-behavior:auto}
       }
     });
   }
-  if (boxes.length) { tick(); setInterval(tick, 1000); }
+  tick(); setInterval(tick, 1000);
 
   
   var flip = document.getElementById('flip'), hint = document.getElementById('flipHint');
